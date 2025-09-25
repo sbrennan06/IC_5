@@ -17,3 +17,50 @@ const cart = [
 
 // Try: "regular", "student", "member", or "vip"
 const customerType = "member";
+
+//task 1: getCategoryDiscount(category)
+
+
+function getCategoryDiscount(category) {
+    switch (category) {
+        case "gear": 
+        return 0.1 //10%
+        break;
+        case "apparel": 
+        return 0.15 // 15%
+        break;
+        case "snacks":
+        return 0.08 // 8%
+        break;
+        case "access": 
+        return 0.05 // 5%
+        break;
+        case "default": 
+        return 0.00 // 0%
+        break;
+    }}
+
+
+    console.log(getCategoryDiscount("gear"))
+
+//task 2 - price after category discount
+
+function priceAfterCategoryDiscount(product) {
+    let rate = getCategoryDiscount(product.category);
+    return product.price * (1-rate);
+
+}
+
+console.log(priceAfterCategoryDiscount(products[0]));
+
+//step 3 - find products by ID
+
+
+function findProductsbyId(id) {
+    for (let p of products) {
+        if (p.id === id) return p;
+}  return null;
+}
+
+//step 4
+function lineItemTotal(cartItem)
