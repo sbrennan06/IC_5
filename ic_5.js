@@ -60,7 +60,16 @@ function findProductsbyId(id) {
     for (let p of products) {
         if (p.id === id) return p;
 }  return null;
-}
 
-//step 4
-function lineItemTotal(cartItem)
+}
+console.log(findProductsbyId(201));
+
+
+//step 4 - line item total 
+
+function lineItemTotal(cartItem) {
+    const product = findProductById(cartItem.productId);
+    if (!product || !Number.isFinite(cartItem.qty) || cartItem.qty <= 0) {
+        return 0;
+    }
+}
